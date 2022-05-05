@@ -94,7 +94,8 @@ public class ReimbursementController {
 			String email = employee.getEmail();
 			log.info("Employee email: "+email);
 			RestTemplate rest = new RestTemplate();
-			String resourceUrl = "http://localhost:8080/sendEmail";
+			//String resourceUrl = "http://localhost:8080/sendEmail";
+			String resourceUrl = "http://34.130.241.186:8080/sendEmail";
 			ResponseEntity<String> response = rest.getForEntity(resourceUrl + "/"+email, String.class);
 
 			return new ResponseEntity<>(HttpStatus.OK);
